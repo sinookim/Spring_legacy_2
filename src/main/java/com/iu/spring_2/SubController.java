@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SubController {
 	
 	@RequestMapping(value = "sub1")
-	public String sub1() {
+	public void sub1() {
 		
 	}
 
