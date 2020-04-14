@@ -1,12 +1,14 @@
 package com.iu.spring_2.member;
 
 public class MemberVO {
+	
 	private String id;
 	private String pw;
 	private String name;
 	private int age;
 	private String email;
 	private String phone;
+	
 	public String getId() {
 		return id;
 	}
@@ -45,4 +47,5 @@ public class MemberVO {
 	}
 	
 	
+
 }

@@ -2,6 +2,7 @@ package com.iu.spring_2.member;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,13 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping(value = "/member/**")
 public class MemberController {
+
+	@Autowired
 	private MemberService memberService;
 	
-	public MemberController() {
-		memberService = new MemberService();
-	}
-	
-	
+
 	@RequestMapping(value= "memberJoin")
 	public void memberJoin(Model model) {
 		String id= "test";
@@ -37,15 +36,13 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value= "memberLogin", method = RequestMethod.POST)
-	public String memberLogin2(HttpSession session) throws Exception {
-		session = memberService.memberJoin(memberVO);
-		//로그인 성공이면 index로 이동
-		//실패하면 로그인 실패를 alert으로 띄우고 다시 loginform으로 이동
-		if (condition) {
-			session.setAttribute(name, value);
-		}else {
-			
-		}
+	public String memberLogin2(MemberVO memberVO, HttpSession session) throws Exception {
+		
+		 memberVO = memberService.memberLogin(memberVO);
+		
+		 System.out.println(memberVO);
+		//로그인 성공이면 index
+		//로그인 실패 하면 로그인 실패 alert login form 이동		 
 				 
 				 
 		return "redirect:../";
