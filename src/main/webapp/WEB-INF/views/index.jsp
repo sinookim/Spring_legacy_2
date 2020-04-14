@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Main Page</title>
 
 <c:import url="./template/boot.jsp"></c:import>
 
@@ -13,7 +13,6 @@
 <body>
 	<c:import url="./template/header.jsp"></c:import>
 
-	<h1>Add Point Branch</h1>
 </body>
 </html>
 
